@@ -52,9 +52,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${euclidCircular.variable} font-euclid antialiased`}>
         <MantineProvider>
-          <Header />
-          <Navbar />
-          <main className="bg-[#FBFCFC]">{children}</main>
+          <main className="flex flex-col min-h-screen">
+            <Header />
+            <Navbar />
+            <main className="h-full flex-1 bg-[#FBFCFC]">{children}</main>
+          </main>
         </MantineProvider>
       </body>
     </html>

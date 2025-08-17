@@ -61,8 +61,8 @@ const Avatar = () => {
       </Menu.Target>
 
       <Menu.Dropdown className="space-y-3">
-        <div className="bg-gray-100 p-3 flex gap-3 items-center rounded-xl">
-          <div className="h-12 w-12 flex items-center justify-center bg-green-900 text-white rounded-full text-2xl font-medium">
+        <div className="bg-gray p-3 flex gap-3 items-center rounded-xl">
+          <div className="h-12 w-12 flex items-center justify-center bg-green text-white rounded-full text-2xl font-medium">
             D
           </div>
           <div>
