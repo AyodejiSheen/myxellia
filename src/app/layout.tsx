@@ -1,15 +1,41 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
+import { MantineProvider } from "@mantine/core";
+import "@mantine/core/styles.css";
 import "./globals.css";
+import Header from "./_components/header";
+import Navbar from "./_components/navbar";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const euclidCircular = localFont({
+  src: [
+    {
+      path: "../../public/fonts/Euclid Circular A Light.ttf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/Euclid Circular A Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/Euclid Circular A Medium.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/Euclid Circular A SemiBold.ttf",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/Euclid Circular A Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-euclid-circular",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -24,10 +50,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className={`${euclidCircular.variable} font-euclid antialiased`}>
+        <MantineProvider>
+          <Header />
+          <Navbar />
+          <main className="bg-[#FBFCFC]">{children}</main>
+        </MantineProvider>
       </body>
     </html>
   );
